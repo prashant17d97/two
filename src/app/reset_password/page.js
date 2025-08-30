@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import logo from "../../public/deepcarve_logo.svg";
+import logo from "../../../public/deepcarve_logo.svg";
 
-export default function Home() {
-  const router = useRouter();
+export default function ResetPasswordPage() {
   // --- OTP state ---
   const OTP_LENGTH = 4;
   const [otp, setOtp] = useState(Array(OTP_LENGTH).fill(""));
@@ -64,8 +62,6 @@ export default function Home() {
       // Simulate async verification request
       await new Promise((r) => setTimeout(r, 1200));
       alert(`OTP Code: ${code}`);
-      // Navigate to reset password after alert is dismissed
-      router.push("/reset_password");
     } finally {
       setIsVerifying(false);
     }
