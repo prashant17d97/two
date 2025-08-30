@@ -1,103 +1,100 @@
+import logo from "../../public/deepcarve_logo.svg";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    return (
+        <div className="flex flex-col items-center justify-center h-screen bg-neutral-50">
+            <div className="flex p-12 flex-col min-h-screen w-full max-w-screen-xl mx-auto">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                <header className=" text-white flex items-center content-center">
+                    <Image
+                        src={logo}
+                        alt="Deepcarve Logo"
+                        width={200}
+                        height={150}
+                        priority={true}
+                    />
+                </header>
+
+                <main className="flex-1 overflow-auto ">
+                    <div className="flex flex-col md:flex-row  gap-4 h-[80vh]">
+
+                        <div className="flex min-h-fit lg:flex-1 items-center justify-start sm:pt-12 sm:pb-16 md:py-0">
+                            <div
+                                className="text-emerald-950 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-archivo">We&apos;re
+                                on a mission to<br/>help memorialist
+                            </div>
+                        </div>
+
+                        <div className="flex min-h-fit lg:flex-1 sm:items-start sm:justify-start md:items-center md:justify-center lg:items-center lg:justify-center">
+                            <div className="flex flex-col bg-white p-5 items-start justify-center rounded-xl gap-3">
+                                <div
+                                    className="self-stretch justify-start text-zinc-900 text-3xl font-medium font-Inter">Enter
+                                    OTP Code
+                                </div>
+                                <div className="self-stretch justify-start">
+                                    <span className="text-zinc-900/70 text-lg font-medium font-Inter leading-none">Enter code that has been sent to </span>
+                                    <span
+                                        className="text-zinc-900 text-lg font-medium font-Inter leading-none">email</span>
+                                </div>
+                                <div
+                                    className="justify-center text-zinc-500 text-base font-medium font-Inter pt-2">Enter
+                                    Code
+                                </div>
+                                {/*    OTP Input Field*/}
+                                <div className="self-stretch h-14 inline-flex justify-start items-start gap-1">
+                                    <div
+                                        className="flex-1 self-stretch px-4 py-2 bg-white rounded-xl outline outline-1 outline-offset-[-1px] text-neutral-700 flex justify-start items-center gap-3 overflow-hidden">
+                                        <div className="flex-1 inline-flex flex-col justify-center items-start gap-1">
+                                            <div
+                                                className="self-stretch text-center justify-center text-neutral-700 text-base font-normal font-Inter">1
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="flex-1 self-stretch px-4 py-2 bg-white rounded-lg outline outline-1 outline-offset-[-1px] text-neutral-700 flex justify-start items-center gap-3 overflow-hidden">
+                                        <div className="flex-1 inline-flex flex-col justify-center items-start gap-1">
+                                            <div
+                                                className="self-stretch text-center justify-center text-neutral-700 text-base font-normal font-Inter">2
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="flex-1 self-stretch px-4 py-2 bg-white rounded-xl outline outline-1 outline-offset-[-1px] text-neutral-700 flex justify-start items-center gap-3 overflow-hidden">
+                                        <div className="flex-1 inline-flex flex-col justify-center items-start gap-1">
+                                            <div
+                                                className="self-stretch text-center justify-center text-neutral-700 text-base font-normal font-Inter">3
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="flex-1 self-stretch px-4 py-2 bg-white rounded-xl outline outline-1 outline-offset-[-1px] text-neutral-700 flex justify-start items-center gap-3 overflow-hidden">
+                                        <div className="flex-1 inline-flex flex-col justify-center items-start gap-1">
+                                            <div
+                                                className="self-stretch text-center justify-center text-neutral-700 text-base font-normal font-Inter">4
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    className="self-stretch text-center justify-start text-zinc-900 text-base font-medium font-Inter">02:20
+                                </div>
+                                <div
+                                    className="self-stretch text-center justify-start text-neutral-400 text-base font-medium font-Inter">Resend
+                                    Code
+                                </div>
+                                <div
+                                    className="self-stretch px-7 py-3 bg-sky-700 rounded-lg inline-flex justify-center items-center gap-2 overflow-hidden">
+                                    <div
+                                        className="justify-start text-white text-base font-medium font-Inter leading-tight">Confirm
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
