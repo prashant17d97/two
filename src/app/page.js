@@ -168,6 +168,11 @@ export default function Home() {
             </div>
           </div>
         </main>
+        <footer className="flex gap-2">
+          <div className="justify-start self-stretch font-['Archivo'] text-lg leading-tight font-medium text-emerald-950/60">
+            Change your life to be better
+          </div>
+        </footer>
       </div>
     </div>
   );
