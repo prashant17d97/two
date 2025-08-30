@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import logo from "../../public/deepcarve_logo.svg";
 
@@ -72,22 +72,24 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-50">
       <div className="mx-auto flex min-h-screen w-full max-w-screen-xl flex-col p-12">
         <header className="flex items-center">
-          <Image src={logo} alt="Deepcarve Logo" width={200} height={150} priority />
+          <Image src={logo} alt="Deepcarve Logo" width={200} height={150} priority/>
         </header>
 
         <main className="flex-1 overflow-auto">
           <div className="flex min-h-[80vh] flex-col gap-6 md:flex-row">
             {/* Left column: hero text */}
-            <div className="flex items-center justify-start sm:items-start sm:justify-start md:items-center md:justify-center md:pt-12 md:pb-16 lg:flex-1 lg:items-center lg:justify-center">
+            <div
+              className="flex items-center justify-start sm:items-start sm:justify-start md:items-center md:justify-center md:pt-12 md:pb-16 lg:flex-1 lg:items-center lg:justify-center">
               <div className="font-archivo text-3xl font-normal text-emerald-950 sm:text-4xl md:text-5xl lg:text-6xl">
                 We&apos;re on a mission to
-                <br />
+                <br/>
                 help memorialist
               </div>
             </div>
 
             {/* Right column: OTP card */}
-            <div className="flex min-h-fit sm:items-start sm:justify-start md:items-center md:justify-center lg:flex-1 lg:items-center lg:justify-center">
+            <div
+              className="flex min-h-fit sm:items-start sm:justify-start md:items-center md:justify-center lg:flex-1 lg:items-center lg:justify-center">
               <form
                 onSubmit={handleSubmit}
                 noValidate
@@ -118,7 +120,7 @@ export default function Home() {
                 </label>
                 {/* OTP Inputs */}
                 <div className="inline-flex h-14 items-start justify-start gap-1 self-stretch">
-                  {Array.from({ length: OTP_LENGTH }).map((_, idx) => (
+                  {Array.from({length: OTP_LENGTH}).map((_, idx) => (
                     <div
                       key={idx}
                       className="flex flex-1 items-center justify-start gap-3 self-stretch overflow-hidden rounded-xl bg-white px-4 py-2 text-neutral-700 outline outline-1 outline-offset-[-1px]"
@@ -168,8 +170,9 @@ export default function Home() {
             </div>
           </div>
         </main>
-        <footer className="flex gap-2">
-          <div className="justify-start self-stretch font-['Archivo'] text-lg leading-tight font-medium text-emerald-950/60">
+        <footer>
+          <div
+            className="justify-start self-stretch font-archivo text-lg leading-tight font-medium text-emerald-950/60">
             Change your life to be better
           </div>
         </footer>
