@@ -21,6 +21,7 @@ export default function OtpForm({
   onSubmit,
   onResend,
   otpLength = 4,
+  isVerifying = false,
   title = "Enter OTP Code",
   email = "email",
   otpDuration = 140,
@@ -31,7 +32,6 @@ export default function OtpForm({
   const inputsRef = useRef([]);
   const [secondsLeft, setSecondsLeft] = useState(otpDuration);
   const canResend = secondsLeft === 0;
-  const [isVerifying, setIsVerifying] = useState(false);
   const isOtpComplete = otp.every((d) => d !== "");
 
   useEffect(() => {
@@ -94,14 +94,10 @@ export default function OtpForm({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isVerifying || !isOtpComplete) return;
-    setIsVerifying(true);
-    try {
-      const code = otp.join("");
-      if (onSubmit) {
-        onSubmit(code);
-      }
-    } finally {
-      setIsVerifying(false);
+    if (otp.some((d) => d === "")) return;
+    const code = otp.join("");
+    if (onSubmit) {
+      onSubmit(code);
     }
   };
 
@@ -184,7 +180,7 @@ export default function OtpForm({
         type="button"
         onClick={handleResend}
         disabled={!canResend || isVerifying}
-        className={`font-Inter justify-start self-stretch text-center text-base font-medium ${canResend && !isVerifying ? "text-neutral-900" : "cursor-not-allowed text-neutral-400"}`}
+        className={`font-Inter justify-start self-stretch text-center text-base font-medium ${canResend && !isVerifying ? "cursor-pointer text-neutral-900" : "cursor-not-allowed text-neutral-400"}`}
       >
         Resend Code
       </button>
@@ -192,7 +188,7 @@ export default function OtpForm({
       <button
         type="submit"
         disabled={!isOtpComplete || isVerifying}
-        className={`inline-flex items-center justify-center gap-2 self-stretch overflow-hidden rounded-lg px-7 py-3 ${!isOtpComplete || isVerifying ? "cursor-not-allowed bg-sky-700 opacity-50" : "bg-sky-700 hover:bg-sky-800"}`}
+        className={`inline-flex items-center justify-center gap-2 self-stretch overflow-hidden rounded-lg px-7 py-3 ${!isOtpComplete || isVerifying ? "cursor-not-allowed bg-sky-700 opacity-50" : "cursor-pointer bg-sky-700 hover:bg-sky-800"}`}
       >
         <span className="font-Inter justify-start text-base leading-tight font-medium text-white">
           Confirm

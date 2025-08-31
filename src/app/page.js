@@ -1,6 +1,6 @@
 "use client";
-import ValidationLayout from "@/components/validationLayout";
-import {useRouter} from "next/navigation";
+import ValidationLayout from "@/components/ValidationLayout";
+import { useRouter } from "next/navigation";
 
 export default function ValidateOTP() {
   const router = useRouter();
