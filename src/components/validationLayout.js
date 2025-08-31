@@ -1,7 +1,7 @@
 import Image from "next/image";
 import logo from "../../public/deepcarve_logo.svg";
 
-export default function OTPlayout({ children }) {
+export default function ValidationLayout({ children }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-50">
       <div className="mx-auto flex min-h-screen w-full max-w-screen-xl flex-col p-12">
